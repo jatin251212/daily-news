@@ -14,6 +14,7 @@ const NewsItem =(props)=> {
             }
             className="card-img-top"
             alt="..."
+            style={{height:'300px'}}
           />
           <div className="card-body ">
             <h5 className="card-title">
