@@ -2,7 +2,7 @@ import React, { useState } from "react";
 // import PropTypes from 'prop-types'
 import { Link } from "react-router-dom";
 
-const Navbar=()=>{
+const Navbar=(props)=>{
   //   static propTypes = {
 
   //   }
@@ -11,6 +11,10 @@ const Navbar=()=>{
     const name=e.target.value;
     setV(name);
     
+  }
+  const sendData=(data)=>{
+    props.recieveData(data);
+
   }
 
     return (
@@ -95,9 +99,41 @@ const Navbar=()=>{
                 </ul>
               </li>
               <li className="nav-item">
-                <a className="nav-link disabled" aria-disabled="true" href="/">
-                  Disabled
+                <a  className="nav-link dropdown-toggle"
+                  href="/"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="true">
+                  Country
                 </a>
+                <ul className="dropdown-menu">
+                  <li>
+                    <button className="dropdown-item" onClick={sendData('in')} >
+                      India
+                    </button>
+                  </li>
+                  <li>
+                    <button className="dropdown-item" onClick={sendData('us')} >
+                      USA
+                    </button>
+                  </li>
+                  <li>
+                    <button className="dropdown-item" onClick={sendData('sa')} >
+                      South Africa
+                    </button>
+                  </li>
+                  <li>
+                    <button className="dropdown-item" onClick={sendData('nz')}>
+                      New Zealand
+                    </button>
+                  </li>
+                  <li>
+                    <button className="dropdown-item" onClick={sendData('ph')} >
+                      Philippines
+                    </button>
+                  </li>
+                </ul>
+                
               </li>
             </ul>
             <form className="d-flex" role="search">
