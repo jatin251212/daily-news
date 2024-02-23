@@ -20,7 +20,9 @@ export const App =(props)=> {
    const recieveData=(data)=>{
     setData(data);
    }
-   let country='in';
+   const country='in';
+   console.log(data)
+   
 
 
   // state={

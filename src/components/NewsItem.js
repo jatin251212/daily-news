@@ -5,7 +5,7 @@ const NewsItem =(props)=> {
     let { title, description, imageUrl, newsUrl, author, date, source } =props;
     return (
       <div className="my-3">
-        <div className="card">
+        <div className="card" style={{height:'600px'}}>
           <img
             src={
               !imageUrl
